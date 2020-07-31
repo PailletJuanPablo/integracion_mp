@@ -1,0 +1,47 @@
+<%- include('layouts/head.ejs') %>
+
+<div class="container mt-3">
+  <form method="POST">
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Productos</h3>
+        <% products.forEach(product => { %>
+            <input type="hidden" name="products[]" value="<%=product.id%>">
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="<%=product.image%>" class="card-img" />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"><%= product.name %></h5>
+                <p class="card-text"><%= product.description %></p>
+                <p class="card-text">$<%= product.price %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+
+        <h3 class="text-right">Total $<%=total%></h3>
+      </div>
+
+      <div class="col-md-8">
+        <h3>Abonar </h3>
+
+
+        <div class="form-group">
+            <label for="email">Email </label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Ingrese su email">
+            <small id="emailHelp" class="form-text text-muted">No te enviaremos spam :).</small>
+
+          </div>
+
+          <button type="submit" class="btn btn-primary">Abonar con MercadoPago</button>
+
+      </div>
+    </div>
+  </form>
+</div>
+
+<%- include('layouts/footer.ejs') %>

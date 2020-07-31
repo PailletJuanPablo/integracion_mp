@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TT</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <a href="<%= preference.init_point %>" >Pagar</a>
+
+    <form action="/procesar-pago" method="POST">
+      <script
+
+      
+       src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+       data-preference-id="">
+      </script>
+    </form>
+  </body>
+</html>
